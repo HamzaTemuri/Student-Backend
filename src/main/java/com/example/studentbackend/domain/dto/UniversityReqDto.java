@@ -13,6 +13,4 @@ public class UniversityReqDto {
     private Long id;
     private String name;
     private String City;
-    private List<CourseResDto> courses;
-    private List<ApplicationReqDto> applications;
 }

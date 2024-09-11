@@ -21,7 +21,7 @@ public class Application {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "STUS_ID", nullable = false)
+    @JoinColumn(name = "STST_ID", nullable = false)
     private Student student;
 
     @ManyToOne

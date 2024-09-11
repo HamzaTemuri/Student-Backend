@@ -24,10 +24,10 @@ public class University {
     @Column(name = "STUN_CITY", nullable = false)
     private String City;
 
-    @OneToMany(mappedBy = "university", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Course> courses;
 
-    @OneToMany(mappedBy = "university", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Application> applications;
 
     @Column(name = "CREATED_AT", nullable = false)
