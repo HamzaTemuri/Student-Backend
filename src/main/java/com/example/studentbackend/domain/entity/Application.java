@@ -17,19 +17,19 @@ public class Application {
     @Column(name = "STAP_ID")
     private Long id;
 
-    @Column(name = "STAP_NAME")
+    @Column(name = "STAP_NAME", nullable = false)
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "STUS_ID")
+    @JoinColumn(name = "STUS_ID", nullable = false)
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "STUN_ID")
+    @JoinColumn(name = "STUN_ID", nullable = false)
     private University university;
 
     @ManyToOne
-    @JoinColumn(name = "STCO_ID")
+    @JoinColumn(name = "STCO_ID", nullable = false)
     private Course course;
 
     @Column(name = "STAP_APPLICATION_DATE", nullable = false)

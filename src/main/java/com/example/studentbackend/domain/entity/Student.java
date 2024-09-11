@@ -19,16 +19,16 @@ public class Student {
     @Column(name = "STST_ID")
     private Long id;
 
-    @Column(name = "STST_NAME")
+    @Column(name = "STST_NAME", nullable = false)
     private String name;
 
-    @Column(name = "STST_EMAIL", unique = true)
+    @Column(name = "STST_EMAIL", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "STST_PASSWORD")
+    @Column(name = "STST_PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "STST_DOB")
+    @Column(name = "STST_DOB", nullable = false)
     private LocalDate dateOfBirth;
 
     @Column(name = "STST_ENROLLMENT_DATE")

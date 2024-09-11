@@ -18,11 +18,11 @@ public class Course {
     @Column(name = "STCO_ID")
     private Long id;
 
-    @Column(name = "STCO_NAME")
+    @Column(name = "STCO_NAME", nullable = false)
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "STUN_ID")
+    @JoinColumn(name = "STUN_ID", nullable = false)
     private University university;
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)

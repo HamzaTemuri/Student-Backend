@@ -18,10 +18,10 @@ public class University {
     @Column(name = "STUN_ID")
     private Long id;
 
-    @Column(name = "STUN_NAME")
+    @Column(name = "STUN_NAME", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "STUN_CITY")
+    @Column(name = "STUN_CITY", nullable = false)
     private String City;
 
     @OneToMany(mappedBy = "university", cascade = CascadeType.ALL)
