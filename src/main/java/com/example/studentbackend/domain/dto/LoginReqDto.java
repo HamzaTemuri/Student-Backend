@@ -1,5 +1,6 @@
 package com.example.studentbackend.domain.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,12 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class StudentResDto {
-    private Long id;
-    private String name;
+@AllArgsConstructor
+public class LoginReqDto {
     private String email;
     private String password;
-    private LocalDate dateOfBirth;
-    private LocalDateTime enrollmentDate;
-    private List<ApplicationReqDto> applications;
 }
