@@ -1,4 +1,4 @@
-package com.example.studentbackend.service;
+package com.example.studentbackend.utilities;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
-public class JwtService {
+public class JwtUtility {
     @Value("${security.jwt.secret-key}")
     private String secretKey;
 
@@ -51,15 +51,10 @@ public class JwtService {
         return Jwts
                 .builder()
                 .claims(extraClaims)
-//                .setClaims(extraClaims)
                 .subject(userDetails.getUsername())
-//                .setSubject(userDetails.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
-//                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiration))
-//                .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getSignInKey())
-//                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 

@@ -25,10 +25,6 @@ public class Application {
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "STUN_ID", nullable = false)
-    private University university;
-
-    @ManyToOne
     @JoinColumn(name = "STCO_ID", nullable = false)
     private Course course;
 

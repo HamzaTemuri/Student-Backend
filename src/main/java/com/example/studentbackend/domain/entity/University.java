@@ -27,9 +27,6 @@ public class University {
     @OneToMany(mappedBy = "university", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Course> courses;
 
-    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Application> applications;
-
     @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 

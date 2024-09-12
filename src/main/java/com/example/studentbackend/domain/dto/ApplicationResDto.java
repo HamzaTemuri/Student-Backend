@@ -10,4 +10,6 @@ import lombok.Setter;
 public class ApplicationResDto {
     private String id;
     private String name;
+    private StudentResDto student;
+    private CourseResDto course;
 }

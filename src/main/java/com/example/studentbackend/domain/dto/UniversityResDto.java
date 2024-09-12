@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ApplicationReqDto {
-    private String id;
+public class UniversityResDto {
     private String name;
+    private String city;
 }
