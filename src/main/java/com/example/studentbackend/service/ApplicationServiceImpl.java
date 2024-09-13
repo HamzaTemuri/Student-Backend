@@ -1,9 +1,6 @@
 package com.example.studentbackend.service;
 
-import com.example.studentbackend.domain.dto.ApplicationCreateReqDto;
-import com.example.studentbackend.domain.dto.ApplicationResDto;
-import com.example.studentbackend.domain.dto.ApplicationUpdateReqDto;
-import com.example.studentbackend.domain.dto.CourseResDto;
+import com.example.studentbackend.domain.dto.*;
 import com.example.studentbackend.domain.entity.Application;
 import com.example.studentbackend.domain.entity.Course;
 import com.example.studentbackend.domain.entity.Student;
@@ -40,9 +37,13 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public List<ApplicationResDto> getApplications() {
-        List<Application> applications = applicationRepository.findAll();
-        return applications.stream().map(this::convertToDto).toList();
+    public List<StudentApplicationResDto> getApplications(String studentEmail) {
+        Student student = studentRepository.findByEmail(studentEmail)
+                .orElseThrow(() -> new StudentNotFoundException("Invalid Email Address"));
+
+        List<Application> applications = student.getApplications();
+
+        return applications.stream().map(app -> modelMapper.map(app, StudentApplicationResDto.class)).toList();
     }
 
     @Override
