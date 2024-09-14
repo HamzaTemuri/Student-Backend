@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class ApplicationUpdateReqDto {
     private Long applicationId;
     private String applicationName;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
     private LocalDateTime applicationDate;
     private String studentEmail;
     private Long courseId;

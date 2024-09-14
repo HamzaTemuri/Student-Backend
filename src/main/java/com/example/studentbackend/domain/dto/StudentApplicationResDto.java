@@ -1,5 +1,6 @@
 package com.example.studentbackend.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 public class StudentApplicationResDto {
     private Long id;
     private String name;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
     private LocalDateTime applicationDate;
     private CourseResDto course;
 }

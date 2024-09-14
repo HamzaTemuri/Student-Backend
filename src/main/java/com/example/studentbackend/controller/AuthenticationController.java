@@ -7,6 +7,7 @@ import com.example.studentbackend.domain.dto.StudentResDto;
 import com.example.studentbackend.domain.entity.Student;
 import com.example.studentbackend.service.AuthenticationService;
 import com.example.studentbackend.utilities.JwtUtility;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,11 +28,13 @@ public class AuthenticationController {
     }
 
     @PostMapping("/signup")
+    @Operation(summary = "Register student")
     public ResponseEntity<StudentResDto> register(@RequestBody RegisterStudentDto registerStudentDto) {
         return ResponseEntity.ok(authenticationService.signup(registerStudentDto));
     }
 
     @PostMapping("/login")
+    @Operation(summary = "Login with student's credentials")
     public ResponseEntity<LoginResDto> authenticate(@RequestBody LoginReqDto loginReqDto) {
         Student authenticatedStudent = authenticationService.authenticate(loginReqDto);
 
